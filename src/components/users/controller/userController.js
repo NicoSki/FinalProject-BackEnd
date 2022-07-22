@@ -1,4 +1,3 @@
-// let userService = require("../service/userService");
 
 class User{
     async addUser(req,res){
