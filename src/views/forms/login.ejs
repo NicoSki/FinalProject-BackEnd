@@ -1,0 +1,27 @@
+<%- layout("layouts/main.ejs") %>
+<% if(errorMessage) {%>
+  <div class="container text-center bg-danger">
+      <p>
+          <%= errorMessage %>
+      </p>
+  </div>
+  <% } %>
+
+<div class="caja">
+    <img class="logo" src="data:image/png;base64,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" alt="quikImage">
+    <h1>LOG IN</h1>
+    <form action="/user/login" method="POST">
+      
+      <label for="username">EMAIL</label>
+      <input type="text" name="email" placeholder="Example@gmail.com" required>
+     
+      <label for="password">PASSWORD</label>
+      <input type="password" name="password" placeholder="**********" required> 
+
+      <input type="submit" value="GO 🏄‍♂️">
+
+      <br>
+      
+      <a href="/user/signin">I do not have my Quicksilver account!</a>
+    </form>
+  </div>

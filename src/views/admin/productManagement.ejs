@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management of Admin</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body class="bg-dark">
+    <!-- <h1 class="w-100 text-center mb-4 c-purple-600">PRODUCT MANAGEMENT</h1> -->
+    <h1>
+        <p class="text-dark bg-white text-center">PRODUCT MANAGEMENT</p>
+    </h1>
+    <br>
+    <div class="container d-flex justify-content-between">
+        <p style="color:white">TOTAL PRODUCTS: <%- response.length %> Units </p>
+        <a href="/admin/addProduct"><button class="btn btn-primary">Add New Product</button></a>
+    </div>
+    <hr style="color:white" />
+    <div class="container">
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">TITLE</th>
+                    <th scope="col">CATEGORIE</th>
+                    <th scope="col">URL IMAGE</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">LINK</th>
+                    <th scope="col">ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% response.forEach(function(e){ %>
+                    <tr>
+                        <th scope="row">
+                            <%- e.title %>
+                        </th>
+                        <td>
+                            <%- e.categorie%>
+                        </td>
+                        <td>
+                            <%- e.img %>
+                        </td>
+                        <td>$<%- e.price %>
+                        </td>
+                        <td>
+                            <%- e.link %>
+                        </td>
+                        <td>
+                            <a href="/admin/editProduct/<%- e._id %> "><i class="fas fa-edit"></i></a>
+                            <button class="btn btn-danger btn-sm ">
+                                <a href="/admin/deleteProduct/<%- e._id %>" style="color:white;"><i
+                                        class="fas fa-trash"></i></a>
+                            </button>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

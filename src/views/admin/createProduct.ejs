@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management of Admin</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body class="bg-dark d-flex justify-content-center align-items-center">
+    <div class="container bg-white rounded shadow p-4 m-4 col-xl-4 col-lg-6">
+        <h2 class="w-100 text-center mb-4">ADD PRODUCT</h2>
+
+        <hr style="color:grey" />
+
+
+        <form action="/admin/addProduct" method="POST">
+            <div class="mb-3">
+                <label class="form-label">TITLE</label>
+                <input type="text" name="title" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">CATEGORIE:</label>
+                <select name="categorie">
+                    <option value="shirt">SHIRT</option>
+                    <option value="trousers">TROUSERS</option>
+                    <option value="shoes">SHOES</option>
+                    <option value="button-down shirt">BUTTON-DOWN SHIRT</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">URL IMAGE</label>
+                <input type="text" name="img" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">PRICE</label>
+                <input type="number" name="price" class="form-control" min="1" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">LINK:</label>
+                <select name="link">
+                    <option value="/products/shirt">/products/shirt</option>
+                    <option value="/products/trouser">/products/trouser</option>
+                    <option value="/products/shoe">/products/shoe</option>
+                    <option value="/products/button-down">/products/button-down</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-dark w-100">SAVE CHANGES</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+
+<%- layout("layouts/main.ejs") %>
+
+<%- include("partials/navbar.ejs") %> 
+
+    <h1 class="text-center bg-primary mt-3">PROFILE</h1>
+
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container p-3 mb-2 bg-primary text-white">
+      <h2 class="text-center">Welcome <%= data.username %> <%= data.surname %>!</h2>
+
+      <div class="card m-auto" style="width: 18rem;">
+        <div class="card-body">
+          <p style="color: black;text-align: center;">Your Data:</p>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">📧 <%= data.email %>
+          </li>
+          <li class="list-group-item">📱 <%= data.phone %>
+          </li>
+          <li class="list-group-item">🚩 <%= data.address %>
+          </li>
+        </ul>
+        <div class="card-body text-center">
+          <a href="/products" class="card-link">Watch Products</a>
+        </div>
+      </div>
+    </div>
+
+<%- include("partials/footer.ejs") %>

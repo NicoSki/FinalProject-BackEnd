@@ -1,0 +1,62 @@
+<%- layout("layouts/main.ejs") %>
+
+    <header>
+        <img src="https://cdn.wallpapersafari.com/36/23/FRohH5.jpg" alt="img" class="rounded mx-auto d-block"
+            height="200">
+    </header>
+
+    <%- include("partials/navbar.ejs") %>
+
+        <div class="d-flex justify-content-around">
+            <div class="bg-primary">
+                <img src="<%= prod[0].img %>" alt="img" />
+            </div>
+            <div class="d-flex flex-column justify-content-around">
+
+                <h1>
+                    <%= prod[0].title %>
+                </h1>
+
+                <span>
+                    <strong>
+                        IN STOCK!
+                    </strong>
+                </span>
+
+                <h5>
+                    $<%= prod[0].price %>
+                </h5>
+
+                <div>
+                    <span>SIZE:</span>
+                    <br>
+
+                    <!-- So here we have a little problem, its a dinamic ejs file so it contains shoes too,
+            but shoes meansure are not the same as clothes meansure... then i added a little if condition
+            to adapt the rendered file -->
+                    <form action="/cart/<%= prod[0]._id %>" method="post">
+                        <% if(prod[0].categorie=="shoes" ){ %>
+                            <select name="size">
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                            </select>
+                            <% }else{ %>
+                                <select name="size">
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                                <% } %>
+                </div>
+                <button class="btn btn-dark" type="submit">Add to cart🛒</button>
+                </form>
+            </div>
+        </div>
+
+
+        <%- include("partials/footer.ejs") %>

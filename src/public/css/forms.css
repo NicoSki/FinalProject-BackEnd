@@ -1,0 +1,173 @@
+    /*-------------
+        SIGN IN:
+    -------------*/
+
+  .caja1 {
+    width: 320px;
+    height: 830px;
+    background: #000;
+    color: rgb(255, 255, 255);
+    top: 75%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 95px 30px;
+  }
+  
+  .caja1 .logo1 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 50px);
+  }
+  
+  .caja1 h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .caja1 label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .caja1 input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .caja1 input[type="text"], .caja1 input[type="password"], .caja1 input[type="number"],.caja1 input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .caja1 input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0f45b8;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .caja1 input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
+  
+  .caja1 a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .caja1 a:hover {
+    color: #fff;
+  }
+
+
+
+
+    /*-------------
+        LOG IN:
+    -------------*/
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100vh;
+  }
+  
+  .caja {
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+  }
+  
+  .caja .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
+  
+  .caja h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
+  
+  .caja label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .caja input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .caja input[type="text"], .caja input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .caja input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0f45b8;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .caja input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
+  
+  .caja a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .caja a:hover {
+    color: #fff;
+  }

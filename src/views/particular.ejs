@@ -1,0 +1,32 @@
+<%- layout("layouts/main.ejs") %>
+
+<header>
+        <img src="https://cdn.wallpapersafari.com/36/23/FRohH5.jpg" alt="img" class="rounded mx-auto d-block" height="200">
+</header>
+
+<%- include("partials/navbar.ejs") %> 
+
+<div class="d-flex flex-wrap">
+    <% response.forEach(function(e){%>
+        <div class="container d-flex justify-content-center mt-100">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-wrapper mb-45 text-center">
+                        <div class="product-img">
+                            <img src=<%= e.img %>  alt="img">
+                            <span class="text-center"><i class="fa fa-rupee"></i>$ <%= e.price %> 
+                            </span>
+                            <div class="product-action">
+                                <div class="product-action-style">
+                                     <a href="<%= e.link %>/<%= e.id %>"> <i class="fas fa-eye"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+</div>
+
+<%- include("partials/footer.ejs") %>

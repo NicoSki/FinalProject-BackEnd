@@ -1,0 +1,66 @@
+<!-- SHIRT  -->
+<section>
+    <div class="d-flex">
+        <div class="row mt-4">
+            <div class="col-md-10 col-md-10">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <img class="img-1" src=<%=response.shirt[0].img %>>
+                        <ul class="product-links">
+                            <li><a class="text-decoration-none" href=<%=response.shirt[0].link %>>SHIRTS</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUTTON-DOWN  -->
+        <div class="d-flex">
+            <div class="row mt-4">
+                <div class="col-md-10 col-md-10">
+                    <div class="product-grid">
+                        <div class="product-image">
+                            <img class="img-1" src=<%=response.button_down[0].img %>>
+                            <ul class="product-links">
+                                <li><a class="text-decoration-none" href=<%=response.button_down[0].link %>>BUTTON-DOWN
+                                        SHIRTS</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TROUSERS  -->
+            <div class="d-flex">
+                <div class="row mt-4">
+                    <div class="col-md-10 col-md-10">
+                        <div class="product-grid">
+                            <div class="product-image">
+                                <img class="img-1" src=<%=response.trouser[0].img %>>
+                                <ul class="product-links">
+                                    <li><a class="text-decoration-none" href=<%=response.trouser[0].link %>>TROUSERS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SHOES  -->
+                <div class="d-flex">
+                    <div class="row mt-4">
+                        <div class="col-md-10 col-md-10">
+                            <div class="product-grid">
+                                <div class="product-image">
+                                    <img class="img-1" src=<%=response.shoes[0].img %>>
+                                    <ul class="product-links">
+                                        <li><a class="text-decoration-none" href=<%=response.shoes[0].link %>>SHOES</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</section>
+
+<%- include("../partials/footer.ejs") %>

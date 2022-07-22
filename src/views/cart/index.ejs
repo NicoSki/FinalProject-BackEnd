@@ -1,0 +1,58 @@
+<%- layout("layouts/main.ejs") %>
+
+    <%- include("../partials/navbar.ejs") %>
+
+        <br>
+        <h2 class="text-center">CART VIEW</h2>
+        <br>
+
+        <p class="text-start"><strong>Your selected products:</strong></p>
+
+        <br>
+
+        <% if(response.length> 0){ %>
+            <% response.forEach(function(e){%>
+
+                <br>
+                <section>
+                    <div class="card" style="width: 18rem;margin: auto;">
+                        <img src=<%=e.img %> class="card-img-top"
+                        alt="img">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <%= e.title %>
+                            </h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Price: $<%= e.price %>
+                            </li>
+                            <li class="list-group-item">Amount:<%= e.amount %> units</li>
+                            <li class="list-group-item">Size: <%= e.size %>
+                            </li>
+                        </ul>
+                        <div class="card-body" style="margin: auto;">
+                            <button class="btn btn-dark">
+                                <a href="/cart/deletProd/<%= e._id %>">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </button>
+                        </div>
+                </section>
+                <% }) %>
+                <br>
+                <p class="text-center"><strong>Final Price:</strong><mark>$<%= total %></mark></p>
+                <div class="d-flex justify-content-center">
+                    <a href="/orderSent" style="text-decoration:none;"><button class="btn btn-outline-warning">Confirm Order</button></a>
+                </div>
+                    <% }else{ %>
+                        <div class="card m-auto">
+                            <div class="card-body m-auto">
+                                <p class="lead">You have not added any product yet.</p>
+                                <a href="/products" class="btn btn-primary btn-block">✨Add new products✨</a>
+                            </div>
+                        </div>
+                        <% } %>
+
+                            <br>
+
+                            <%- include("../partials/footer.ejs") %>

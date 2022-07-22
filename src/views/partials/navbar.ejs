@@ -1,0 +1,23 @@
+<nav class="nav nav-pills nav-fill">
+  <a class="nav-link" href="/products"><i class="fas fa-home"></i></i></a>
+  <a class="nav-link" href="/products/shirt">SHIRTS</a>
+  <a class="nav-link" href="/products/trouser">TROUSERS</a>
+  <a class="nav-link" href="/products/button-down">BUTTON-DOWN SHIRTS</a>
+  <a class="nav-link" href="/products/shoe">SHOES</a>
+  <% if(user) {%>
+    <div class="btn-group">
+      <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Action
+      </button>
+      <ul class="dropdown-menu text-center">
+        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+        <li><a class="nav-link" href="/cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a></li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><a class="dropdown-item" href="/user/exit">Log Out</a></li>
+      </ul>
+    </div>
+    <% } %>
+</nav>
