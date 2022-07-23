@@ -25,7 +25,7 @@ class Server {
     constructor() {
         this.app = express();
         this.port = config.port;
-        this.secret = config.passSecret;
+        this.secret = "secretWord";
         this.settings();
         this.views();
         this.middleware();
