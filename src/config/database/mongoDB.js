@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const { db_credential_mongo } = require("../index");
+// const { db_credential_mongo } = require("../index");
+require("dotenv").config();
 let {logger} = require("../../utils/pino");
 
 
@@ -7,7 +8,7 @@ let connection;
 
 (async () => {
     try {
-        connection = await mongoose.connect(db_credential_mongo.mongo.toString(), { 
+        connection = await mongoose.connect(process.env.MONGO_DB, { 
             useUnifiedTopology:true,
             useNewUrlParser: true,
          });
