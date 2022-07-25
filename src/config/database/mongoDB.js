@@ -7,7 +7,10 @@ let connection;
 
 (async () => {
     try {
-        connection = await mongoose.connect(db_credential_mongo.mongo, { useNewUrlParser: true });
+        connection = await mongoose.connect(db_credential_mongo.mongo.toString(), { 
+            useUnifiedTopology:true,
+            useNewUrlParser: true,
+         });
         logger.info("Mongo DB is connected");
     } catch (error) {
         logger.error(error);
