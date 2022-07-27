@@ -1,4 +1,5 @@
 let express = require("express");
+const http = require("http");
 let { config } = require("./config");
 let path = require("path");
 let cors = require("cors");
@@ -6,7 +7,8 @@ const engine = require("ejs-mate");
 let serverRoutes = require("./routes");
 let morgan = require("morgan");
 let mongoDB = require("./config/database/mongoDB");
-let {logger} = require("./utils/pino");
+let { logger } = require("./utils/pino");
+
 
 //*CLUSTER:
 let cluster = require("cluster");
@@ -20,22 +22,28 @@ require("./utils/passport/local-auth");
 //*FLASH
 const flash = require("connect-flash");
 
+//*SOCKET IO
+const socketio = require("socket.io");
+
+
 
 class Server {
     constructor() {
         this.app = express();
+        this.server = http.createServer(this.app);
         this.port = config.port;
-        this.secret = "secretWord";
+        this.secret = config.passSecret;
         this.settings();
         this.views();
         this.middleware();
         this.routes();
+        this.sockets();
     }
 
     settings() {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
-        this.app.use(express.static(__dirname + "/public"));
+        this.app.use(express.static(path.join(__dirname,"/public")));
     }
 
     views() {
@@ -68,6 +76,11 @@ class Server {
         serverRoutes(this.app);
     }
 
+    sockets(){
+        const io = socketio(this.server);
+        require("./chat/sockets")(io);
+    }
+
     init() {
         if (cluster.isMaster) {
             logger.warn(`Master PID --> ${process.pid}`);
@@ -83,7 +96,7 @@ class Server {
                 cluster.fork();
             });
         } else {
-            this.app.listen(this.port, () => { logger.info(`Server on http://localhost:${this.port} || Worker: ${process.pid}`) });
+            this.server.listen(this.port, () => { logger.info(`Server on http://localhost:${this.port} || Worker: ${process.pid}`) });
         }
     }
 }

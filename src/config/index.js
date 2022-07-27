@@ -8,10 +8,10 @@ let config = {
 }
 
 
-// let db_credential_mongo = {
-//     mongo: process.env.MONGO_DB
-// }
+let db_credential_mongo = {
+    mongo: process.env.MONGO_DB
+}
 
 
 
-module.exports = { config };
+module.exports = { config, db_credential_mongo };

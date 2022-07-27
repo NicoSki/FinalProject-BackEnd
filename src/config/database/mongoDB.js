@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-// const { db_credential_mongo } = require("../index");
-// require("dotenv").config();
+const { db_credential_mongo } = require("../index");
 let {logger} = require("../../utils/pino");
 
 
@@ -8,7 +7,7 @@ let connection;
 
 (async () => {
     try {
-        connection = await mongoose.connect("mongodb://localhost/quiksilverapp",{ 
+        connection = await mongoose.connect(db_credential_mongo.mongo,{ 
             useUnifiedTopology:true,
             useNewUrlParser: true,
          });
